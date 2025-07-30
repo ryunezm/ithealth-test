@@ -37,15 +37,13 @@ export class Jsonplaceholder {
 
   constructor(private http: HttpClient){}
 
-  getUsersData(): Observable<userData[]> {
-    return this.http.get<userData[]>(this.apiURL);
-  }
-  
-  getUserData(id: number): Observable<userData>{
-    const params = {
-      id: id
-    }
-
-    return this.http.get<userData>(this.apiURL, {params})
+  /**
+   * Get all data from a single user
+   * @param id user_id
+   * @returns https://jsonplaceholder.typicode.com/users/user_id
+   */
+  getSingleUserData(id: number): Observable<userData>{
+    const url = `${this.apiURL}/${id}`;
+    return this.http.get<userData>(url)
   }
 }

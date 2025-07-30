@@ -1,7 +1,19 @@
 <header>
-    Header
+    <h1>ITHEALTH-TEST</h1>
 </header>
 
-<body>
-    <button matButton="outlined">GetData</button>
-</body>
+<div class="container">
+    <section class="form-test" id="part_1">
+        <button (click)="getDataFirstFiveUsers()">Get data from first 5 users</button>
+    </section>
+    <section class="form-test" id="part_2">
+        <button (click)="getDataFromSingleUser()">Get data from: </button>
+        <input type="number" name="value_id" id="value_id">
+    </section>
+
+    <section class="form-test">
+        <app-user-form></app-user-form>
+    </section>
+    
+</div>
+

@@ -1,1 +1,15 @@
-<p>user-form works!</p>
+<br>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="">
+        Name: <input type="text" formControlName="name">
+    </label>
+    <label for="">
+        Email: <input type="email" formControlName="email">
+    </label>
+    <label for="">
+        Phone: <input type="tel" formControlName="phone">
+    </label>
+    <label for="">
+        <address></address>
+    </label>
+</form>

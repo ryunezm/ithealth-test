@@ -1,37 +1,37 @@
 import {Component} from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms'
+import {FormBuilder, Validators, FormGroup} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+//import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-user-form',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './user-form.html',
-  styleUrl: './user-form.scss'
+  styleUrl: './user-form.scss',
 })
 export class UserForm {
-constructor(private fb: FormBuilder){}
+    userForm: FormGroup;
 
-  //Nombre
-  // Correo electrónico
-  // Número de teléfono
-  // Dirección
-  userForm = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
-    phone: ['', [Validators.required]],
-    address: this.fb.group({
-      street: [],
-      suite: [],
-      city: [],
-      zipcode: [],
-      geo: this.fb.group({
-        lat: [],
-        lng: []
-      })
-    })
-  })  
+    constructor(private fb: FormBuilder){
+      this.userForm = this.fb.group({
+        name: ['', [Validators.required, Validators.minLength(3)]],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', [Validators.required]],
+        address: this.fb.group({
+          street: [],
+          suite: [],
+          city: [],
+          zipcode: [],
+          geo: this.fb.group({
+            lat: [],
+            lng: []
+          })
+        })
+      })  
+    }
 
   onSubmit() {
     if (this.userForm.valid) { console.log(this.userForm.value)}
-    else {console.log()}
+    else {console.log('Form is invalid')} //TODO: Toast
   }
 }
