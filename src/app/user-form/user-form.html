@@ -10,6 +10,8 @@
         Phone: <input type="tel" formControlName="phone">
     </label>
     <label for="">
-        <address></address>
+        Address: <input type="text" formControlName="address">
     </label>
+
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
 </form>

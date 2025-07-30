@@ -17,16 +17,7 @@ export class UserForm {
         name: ['', [Validators.required, Validators.minLength(3)]],
         email: ['', [Validators.required, Validators.email]],
         phone: ['', [Validators.required]],
-        address: this.fb.group({
-          street: [],
-          suite: [],
-          city: [],
-          zipcode: [],
-          geo: this.fb.group({
-            lat: [],
-            lng: []
-          })
-        })
+        address: ['', [Validators.required]],
       })  
     }
 
