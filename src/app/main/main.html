@@ -1,19 +1,28 @@
 <header>
-    <h1>ITHEALTH-TEST</h1>
+  <h1>ITHEALTH</h1>
 </header>
 
 <div class="container">
-    <section class="form-test" id="part_1">
-        <button (click)="getDataFirstFiveUsers()">Get data from first 5 users</button>
+  <section class="form-get-data">
+    <h3>GET DATA</h3>
+    <section id="part_1">
+      <button matButton="outlined" (click)="getDataFirstFiveUsers()">Get data from first 5 users</button>
     </section>
-    <section class="form-test" id="part_2">
-        <button (click)="getDataFromSingleUser()">Get data from: </button>
-        <input type="number" name="value_id" id="value_id">
+    <mat-divider></mat-divider>
+    <section id="part_2">
+      <button matButton="outlined" (click)="getDataFromSingleUser()" [disabled]="!value_id.value">Get data from</button>
+      <mat-form-field appearance="outline">
+        <mat-label>User ID</mat-label>
+        <input matInput type="number" name="value_id" id="value_id" #value_id />
+      </mat-form-field>
     </section>
-
-    <section class="form-test">
-        <app-user-form></app-user-form>
+  </section>
+  <mat-divider></mat-divider>
+  <section class="form-test">
+    <h3>BASIC FORM TO SEND INFORMATION</h3>
+    <section>
+      <app-user-form></app-user-form>
     </section>
     
+  </section>
 </div>
-

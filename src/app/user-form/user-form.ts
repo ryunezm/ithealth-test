@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms'
-import { ReactiveFormsModule } from '@angular/forms';
-//import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-user-form',
-  imports: [ReactiveFormsModule],
+  imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatButtonModule],
   templateUrl: './user-form.html',
   styleUrl: './user-form.scss',
 })

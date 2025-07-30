@@ -2,10 +2,19 @@ import { Component } from '@angular/core';
 import { Jsonplaceholder, userData } from '../jsonplaceholder';
 import { Observable, of} from 'rxjs';
 import { UserForm } from '../user-form/user-form';
+import { MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-main',
-  imports: [UserForm],
+  imports: [
+    MatButtonModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    UserForm],
   templateUrl: './main.html',
   styleUrl: './main.scss'
 })
