@@ -6,7 +6,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Before running this project, make sure you have Node.js and Angular CLI installed:
 
-1. **Node.js v24.4.1**: Download from [https://nodejs.org/dist/v24.4.1/node-v24.4.1-x64.msi](https://nodejs.org/dist/v24.4.1/node-v24.4.1-x64.msi)
+1. **Node.js v24.4.1**: Download from [https://nodejs.org/en/download/current](https://nodejs.org/en/download/current)
 
 2. **Angular CLI**: Install globally using npm:
    ```bash
