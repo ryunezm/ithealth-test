@@ -4,6 +4,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-user-form',
@@ -14,7 +15,8 @@ import {MatButtonModule} from '@angular/material/button';
 export class UserForm {
     userForm: FormGroup;
 
-    constructor(private fb: FormBuilder){
+    // Inject FormBuilder and Toastr Service
+    constructor(private fb: FormBuilder, private toastr: ToastrService){
       this.userForm = this.fb.group({
         name: ['', [Validators.required, Validators.minLength(3)]],
         email: ['', [Validators.required, Validators.email]],
@@ -23,12 +25,17 @@ export class UserForm {
       })  
     }
 
-  //TODO: Toast
   onSubmit() {
+    // Print data in console and show a toast
     if (this.userForm.valid) {
       console.log(this.userForm.value);
       console.log("Submit successful");
+      this.toastr.success("Submit successful");
     }
-    else {console.log('Form is invalid')} 
+    // This is not necessary, but just in case...
+    else {
+      console.log('Form is invalid');
+      this.toastr.error("Form is invalid", "", {timeOut: 3000}); 
+    }
   }
 }
