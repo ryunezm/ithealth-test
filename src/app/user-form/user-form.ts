@@ -21,8 +21,12 @@ export class UserForm {
       })  
     }
 
+  //TODO: Toast
   onSubmit() {
-    if (this.userForm.valid) { console.log(this.userForm.value)}
-    else {console.log('Form is invalid')} //TODO: Toast
+    if (this.userForm.valid) {
+      console.log(this.userForm.value);
+      console.log("Submit successful");
+    }
+    else {console.log('Form is invalid')} 
   }
 }
