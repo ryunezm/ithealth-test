@@ -1,25 +1,25 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">    
+<form (ngSubmit)="onSubmit()" [formGroup]="userForm">
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
-    <input matInput type="text" formControlName="name">
+    <input formControlName="name" matInput type="text">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput type="email" formControlName="email">
+    <input formControlName="email" matInput type="email">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Phone</mat-label>
-    <input matInput type="tel" formControlName="phone">
+    <input formControlName="phone" matInput type="tel">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Address</mat-label>
-    <input matInput type="text" formControlName="address">
+    <input formControlName="address" matInput type="text">
   </mat-form-field>
 
-  <button matButton="outlined" type="submit" [disabled]="userForm.invalid">
+  <button [disabled]="userForm.invalid" matButton="outlined" type="submit">
     Submit
   </button>
 </form>

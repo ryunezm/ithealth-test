@@ -1,6 +1,6 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
 // Interface describing the structure of a response from jsonplaceholder
 export interface userData {
@@ -35,14 +35,15 @@ export class Jsonplaceholder {
 
   private readonly apiURL = 'https://jsonplaceholder.typicode.com/users';
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) {
+  }
 
   /**
    * Get all data from a single user
    * @param id user_id
    * @returns https://jsonplaceholder.typicode.com/users/user_id
    */
-  getSingleUserData(id: number): Observable<userData>{
+  getSingleUserData(id: number): Observable<userData> {
     const url = `${this.apiURL}/${id}`;
     return this.http.get<userData>(url)
   }

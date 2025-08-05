@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {FormBuilder, Validators, FormGroup} from '@angular/forms'
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -13,17 +12,17 @@ import {ToastrService} from 'ngx-toastr';
   styleUrl: './user-form.scss',
 })
 export class UserForm {
-    userForm: FormGroup;
+  userForm: FormGroup;
 
-    // Inject FormBuilder and Toastr Service
-    constructor(private fb: FormBuilder, private toastr: ToastrService){
-      this.userForm = this.fb.group({
-        name: ['', [Validators.required, Validators.minLength(3)]],
-        email: ['', [Validators.required, Validators.email]],
-        phone: ['', [Validators.required]],
-        address: ['', [Validators.required]],
-      })  
-    }
+  // Inject FormBuilder and Toastr Service
+  constructor(private fb: FormBuilder, private toastr: ToastrService) {
+    this.userForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+    })
+  }
 
   onSubmit() {
     // Print data in console and show a toast
@@ -35,7 +34,7 @@ export class UserForm {
     // This is not necessary, but just in case...
     else {
       console.log('Form is invalid');
-      this.toastr.error("Form is invalid", "", {timeOut: 3000}); 
+      this.toastr.error("Form is invalid", "", {timeOut: 3000});
     }
   }
 }

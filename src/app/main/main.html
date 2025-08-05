@@ -6,14 +6,14 @@
   <section class="form-get-data">
     <h3>GET DATA</h3>
     <section id="part_1">
-      <button matButton="outlined" (click)="getDataFirstFiveUsers()">Get data from first 5 users</button>
+      <button (click)="getDataFirstFiveUsers()" matButton="outlined">Get data from first 5 users</button>
     </section>
     <mat-divider></mat-divider>
     <section id="part_2">
-      <button matButton="outlined" (click)="getDataFromSingleUser()" [disabled]="!value_id.value">Get data from</button>
+      <button (click)="getDataFromSingleUser()" [disabled]="!value_id.value" matButton="outlined">Get data from</button>
       <mat-form-field appearance="outline">
         <mat-label>User ID</mat-label>
-        <input matInput type="number" name="value_id" id="value_id" #value_id />
+        <input #value_id id="value_id" matInput name="value_id" type="number"/>
       </mat-form-field>
     </section>
   </section>
